@@ -1,9 +1,10 @@
-import Header from '~/components/Header';
+import { Header, Home } from '~/components/';
 
 function App() {
     return (
-        <div>
+        <div className="">
             <Header />
+            <Home />
         </div>
     );
 }
