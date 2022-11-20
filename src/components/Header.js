@@ -35,10 +35,12 @@ function Header() {
             window.clearTimeout(delay);
             delay = setTimeout(() => {
                 menu.classList.replace('block', 'hidden');
-            }, 1500);
+            }, 1000);
+            menu.classList.replace('animate-scaleDown', 'animate-scaleUp');
         } else {
             setToggle(true);
             menu.classList.replace('hidden', 'block');
+            menu.classList.replace('animate-scaleUp', 'animate-scaleDown');
         }
         console.log(toggle);
     };
@@ -50,7 +52,7 @@ function Header() {
     return (
         <header
             className={
-                (scrolled ? 'bg-black' : 'bg-transparent') +
+                (scrolled ? 'bg-black animate-appear' : 'bg-transparent') +
                 ' ' +
                 'h-20 flex items-center justify-center fixed top-0 right-0 left-0 z-50'
             }
@@ -124,7 +126,8 @@ function Header() {
                 >
                     <div
                         tabIndex="1"
-                        className="text-[24px]
+                        className="
+                                text-[24px]
                                 leading-5
                                 p-2
                                 md:text-[30px]
@@ -135,24 +138,11 @@ function Header() {
                     >
                         <ion-icon name="menu-outline"></ion-icon>
                     </div>
-
                     <ul
                         id="menu"
-                        className="hidden
-                                    overflow-hidden
-                                    bg-[#150f0c] 
-                                    text-[#ffffff] 
-                                    text-center 
-                                    font-medium 
-                                    absolute 
-                                    top-[62px] 
-                                    min-w-[300px] 
-                                    right-0 
-                                    md:min-w-[700px]
-                                    rounded-br-md
-                                    rounded-bl-md
-                                    animate-growthDownMob
-                                    md:animate-growthDownMob"
+                        className={
+                            'hidden overflow-hidden bg-[#150f0c] text-[#ffffff] text-center font-medium absolute top-20 right-0 min-w-[300px] md:min-w-[700px] rounded-br-md rounded-bl-md animate-scaleUp origin-top'
+                        }
                     >
                         {navList.map(([title, location], index) => (
                             <li key={index} className="lg:rounded hover:text-[#976a13] hover:bg-[#facf5a] select-none">

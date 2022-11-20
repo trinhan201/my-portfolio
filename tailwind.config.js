@@ -5,28 +5,37 @@ module.exports = {
     theme: {
         extend: {
             keyframes: {
-                growthDownTab: {
-                    from: { opacity: 0, height: '0' },
-                    to: { opacity: 1, height: '280px' },
+                appear: {
+                    from: { opacity: 0, transform: 'translateY(-20px)' },
+                    to: { opacity: 1, transform: 'translateY(0)' },
                 },
-                growthDownMob: {
-                    from: { opacity: 0, height: '0' },
-                    to: { opacity: 1, height: '220px' },
+                scaleDown: {
+                    '0%': {
+                        transform: 'scaleY(0)',
+                    },
+                    '80%': {
+                        transform: 'scaleY(1.1)',
+                    },
+                    '100%': {
+                        transform: 'scaleY(1)',
+                    },
                 },
-                growthUpTab: {
-                    from: { opacity: 1, height: '280px' },
-                    to: { opacity: 0, height: '0' },
-                },
-                growthUpMob: {
-                    from: { opacity: 1, height: '220px' },
-                    to: { opacity: 0, height: '0' },
+                scaleUp: {
+                    '0%': {
+                        transform: 'scaleY(1)',
+                    },
+                    '80%': {
+                        transform: 'scaleY(1.1)',
+                    },
+                    '100%': {
+                        transform: 'scaleY(0)',
+                    },
                 },
             },
             animation: {
-                growthDownTab: 'growthDownTab 1.5s ease-in',
-                growthDownMob: 'growthDownMob 1.5s ease-in',
-                growthUpTab: 'growthUpTab 1.5s ease-in',
-                growthUpMob: 'growthUpMob 1.5s ease-in',
+                appear: 'appear 2s ease-in',
+                scaleDown: 'scaleDown 0.7s ease-in-out',
+                scaleUp: 'scaleUp 1s ease-in-out',
             },
         },
     },
