@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const navList = [
     ['Home', '#home'],
@@ -10,30 +10,50 @@ const navList = [
 
 function Header() {
     const [toggle, setToggle] = useState(false);
+    const [activeLink, setActiveLink] = useState('#home');
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const scrollPage = () => {
+            const windowHeight = window.scrollY;
+            if (windowHeight >= 80) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+        window.addEventListener('scroll', scrollPage);
+
+        return () => window.removeEventListener('scroll', scrollPage);
+    }, []);
 
     const handleMenu = () => {
         const menu = document.getElementById('menu');
         if (toggle) {
             setToggle(false);
-            menu.classList.replace('block', 'hidden');
+            var delay;
+            window.clearTimeout(delay);
+            delay = setTimeout(() => {
+                menu.classList.replace('block', 'hidden');
+            }, 1500);
         } else {
             setToggle(true);
             menu.classList.replace('hidden', 'block');
         }
+        console.log(toggle);
+    };
+
+    const handleActiveLink = (value) => {
+        setActiveLink(value);
     };
 
     return (
         <header
-            className="h-20
-                    flex
-                    items-center
-                    justify-center
-                    bg-transparent
-                    fixed
-                    top-0
-                    right-0
-                    left-0
-                    z-50"
+            className={
+                (scrolled ? 'bg-black' : 'bg-transparent') +
+                ' ' +
+                'h-20 flex items-center justify-center fixed top-0 right-0 left-0 z-50'
+            }
         >
             <div
                 className="flex
@@ -49,9 +69,12 @@ function Header() {
                     href="#home"
                     className="flex
                             text-2xl
-                            lg:text-3xl
+                            md:text-[28px]
+                            lg:text-[36px]
                             font-bold
-                            my-auto"
+                            my-auto
+                            select-none"
+                    onClick={() => handleActiveLink('#home')}
                 >
                     Pixels
                     <span
@@ -66,20 +89,29 @@ function Header() {
                     className="hidden
                             lg:flex
                             text-lg
-                            font-bold
-                            uppercase"
+                            font-medium"
                 >
                     {navList.map(([title, location], index) => (
                         <li
                             key={index}
-                            className="px-3
-                                    py-1
+                            className="
                                     lg:rounded
                                     hover:text-[#976a13]
                                     hover:bg-[#facf5a]
-                                    mx-1"
+                                    mx-1
+                                    select-none"
                         >
-                            <a href={location}>{title}</a>
+                            <a
+                                className={
+                                    (activeLink === location ? 'text-[#976a13] bg-[#facf5a] lg:rounded' : '') +
+                                    ' ' +
+                                    'block px-3 py-1'
+                                }
+                                href={location}
+                                onClick={() => handleActiveLink(location)}
+                            >
+                                {title}
+                            </a>
                         </li>
                     ))}
                 </ul>
@@ -91,44 +123,50 @@ function Header() {
                                 relative"
                 >
                     <div
-                        className="text-2xl
+                        tabIndex="1"
+                        className="text-[24px]
                                 leading-5
                                 p-2
-                                border
-                                border-[#cccccc]
+                                md:text-[30px]
                                 rounded-lg
-                                bg-[#423d3c]"
+                                bg-[#423d3c] 
+                                focus:ring-2
+                                focus:ring-white"
                     >
                         <ion-icon name="menu-outline"></ion-icon>
                     </div>
+
                     <ul
                         id="menu"
-                        className="hidden 
-                                bg-[#150f0c] 
-                                text-[#ffffff] 
-                                text-center 
-                                font-bold 
-                                uppercase 
-                                absolute 
-                                top-[62px] 
-                                min-w-[300px] 
-                                right-0 
-                                md:min-w-[700px]
-                                rounded-br-md
-                                rounded-bl-md"
+                        className="hidden
+                                    overflow-hidden
+                                    bg-[#150f0c] 
+                                    text-[#ffffff] 
+                                    text-center 
+                                    font-medium 
+                                    absolute 
+                                    top-[62px] 
+                                    min-w-[300px] 
+                                    right-0 
+                                    md:min-w-[700px]
+                                    rounded-br-md
+                                    rounded-bl-md
+                                    animate-growthDownMob
+                                    md:animate-growthDownMob"
                     >
                         {navList.map(([title, location], index) => (
-                            <li
-                                key={index}
-                                className="px-5
-                                        py-2.5
-                                        md:px-7
-                                        md:py-4
-                                        lg:rounded
-                                        hover:text-[#976a13]
-                                        hover:bg-[#facf5a]"
-                            >
-                                <a href={location}>{title}</a>
+                            <li key={index} className="lg:rounded hover:text-[#976a13] hover:bg-[#facf5a] select-none">
+                                <a
+                                    className={
+                                        (activeLink === location ? 'text-[#976a13] bg-[#facf5a] lg:rounded' : '') +
+                                        ' ' +
+                                        'block px-5 py-2.5 md:px-7 md:py-4'
+                                    }
+                                    href={location}
+                                    onClick={() => handleActiveLink(location)}
+                                >
+                                    {title}
+                                </a>
                             </li>
                         ))}
                     </ul>
