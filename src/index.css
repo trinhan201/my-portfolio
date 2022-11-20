@@ -6,4 +6,8 @@
     html {
         font-family: 'Montserrat', sans-serif;
     }
+    html,
+    body {
+        @apply h-full;
+    }
 }

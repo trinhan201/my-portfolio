@@ -42,7 +42,6 @@ function Header() {
             menu.classList.replace('hidden', 'block');
             menu.classList.replace('animate-scaleUp', 'animate-scaleDown');
         }
-        console.log(toggle);
     };
 
     const handleActiveLink = (value) => {
@@ -52,9 +51,9 @@ function Header() {
     return (
         <header
             className={
-                (scrolled ? 'bg-black animate-appear' : 'bg-transparent') +
+                'h-20 flex items-center justify-center fixed top-0 right-0 left-0 z-50' +
                 ' ' +
-                'h-20 flex items-center justify-center fixed top-0 right-0 left-0 z-50'
+                (scrolled ? 'bg-black animate-appear' : 'bg-transparent')
             }
         >
             <div
@@ -105,9 +104,9 @@ function Header() {
                         >
                             <a
                                 className={
-                                    (activeLink === location ? 'text-[#976a13] bg-[#facf5a] lg:rounded' : '') +
+                                    'block px-3 py-1' +
                                     ' ' +
-                                    'block px-3 py-1'
+                                    (activeLink === location ? 'text-[#976a13] bg-[#facf5a] lg:rounded' : '')
                                 }
                                 href={location}
                                 onClick={() => handleActiveLink(location)}
@@ -140,17 +139,29 @@ function Header() {
                     </div>
                     <ul
                         id="menu"
-                        className={
-                            'hidden overflow-hidden bg-[#150f0c] text-[#ffffff] text-center font-medium absolute top-20 right-0 min-w-[300px] md:min-w-[700px] rounded-br-md rounded-bl-md animate-scaleUp origin-top'
-                        }
+                        className="hidden
+                                overflow-hidden
+                                bg-[#150f0c]
+                                text-[#ffffff]
+                                text-center
+                                font-medium
+                                absolute
+                                top-20
+                                right-0
+                                min-w-[300px]
+                                md:min-w-[700px]
+                                rounded-br-md
+                                rounded-bl-md
+                                animate-scaleUp
+                                origin-top"
                     >
                         {navList.map(([title, location], index) => (
                             <li key={index} className="lg:rounded hover:text-[#976a13] hover:bg-[#facf5a] select-none">
                                 <a
                                     className={
-                                        (activeLink === location ? 'text-[#976a13] bg-[#facf5a] lg:rounded' : '') +
+                                        'block px-5 py-2.5 md:px-7 md:py-4' +
                                         ' ' +
-                                        'block px-5 py-2.5 md:px-7 md:py-4'
+                                        (activeLink === location ? 'text-[#976a13] bg-[#facf5a] lg:rounded' : '')
                                     }
                                     href={location}
                                     onClick={() => handleActiveLink(location)}

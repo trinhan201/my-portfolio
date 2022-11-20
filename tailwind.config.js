@@ -31,11 +31,35 @@ module.exports = {
                         transform: 'scaleY(0)',
                     },
                 },
+                typing: {
+                    '100%': {
+                        left: '100%',
+                        margin: '0 -12px 0 12px',
+                    },
+                },
+                slide: {
+                    '100%': {
+                        top: '-108px',
+                    },
+                },
+                translateY: {
+                    '0%': {
+                        transform: 'translateY(0)',
+                        opacity: 1,
+                    },
+                    '100%': {
+                        transform: 'translateY(100%)',
+                        opacity: 0,
+                    },
+                },
             },
             animation: {
                 appear: 'appear 2s ease-in',
                 scaleDown: 'scaleDown 0.7s ease-in-out',
                 scaleUp: 'scaleUp 1s ease-in-out',
+                typing: 'typing 3s steps(13) infinite',
+                slide: 'slide 6s steps(2) infinite',
+                translateY: 'translateY 1s linear infinite',
             },
         },
     },
