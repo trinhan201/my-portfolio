@@ -52,6 +52,17 @@ module.exports = {
                         opacity: 0,
                     },
                 },
+                mouseScroll: {
+                    '0%': {
+                        opacity: 0,
+                    },
+                    '50%': {
+                        opacity: 0.5,
+                    },
+                    '100%': {
+                        opacity: 1,
+                    },
+                },
             },
             animation: {
                 appear: 'appear 2s ease-in',
@@ -60,8 +71,9 @@ module.exports = {
                 typing: 'typing 3s steps(13) infinite',
                 slide: 'slide 6s steps(2) infinite',
                 translateY: 'translateY 1s linear infinite',
+                mouseScroll: 'mouseScroll alternate 1s ease infinite running',
             },
         },
     },
-    plugins: [],
+    plugins: [require('tailwindcss-animation-delay')],
 };

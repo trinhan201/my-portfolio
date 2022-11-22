@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon } from '@fortawesome/free-regular-svg-icons';
 
 const navList = [
     ['Home', '#home'],
@@ -10,7 +12,6 @@ const navList = [
 
 function Header() {
     const [toggle, setToggle] = useState(false);
-    const [activeLink, setActiveLink] = useState('#home');
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
@@ -44,16 +45,12 @@ function Header() {
         }
     };
 
-    const handleActiveLink = (value) => {
-        setActiveLink(value);
-    };
-
     return (
         <header
             className={
                 'h-20 flex items-center justify-center fixed top-0 right-0 left-0 z-50' +
                 ' ' +
-                (scrolled ? 'bg-black animate-appear' : 'bg-transparent')
+                (scrolled ? 'bg-white shadow-xl animate-appear' : 'bg-transparent')
             }
         >
             <div
@@ -64,7 +61,7 @@ function Header() {
                         md:mx-6
                         lg:w-[1200px]
                         m-w-[100%]
-                        text-[#ffffff]"
+                        text-[#1f2044]"
             >
                 <a
                     href="#home"
@@ -75,7 +72,6 @@ function Header() {
                             font-bold
                             my-auto
                             select-none"
-                    onClick={() => handleActiveLink('#home')}
                 >
                     Pixels
                     <span
@@ -95,21 +91,17 @@ function Header() {
                     {navList.map(([title, location], index) => (
                         <li
                             key={index}
-                            className="
+                            className="relative
                                     lg:rounded
-                                    hover:text-[#976a13]
-                                    hover:bg-[#facf5a]
                                     mx-1
-                                    select-none"
+                                    select-none
+                                    "
                         >
                             <a
-                                className={
-                                    'block px-3 py-1' +
-                                    ' ' +
-                                    (activeLink === location ? 'text-[#976a13] bg-[#facf5a] lg:rounded' : '')
-                                }
+                                className="relative block px-3 py-1 hover:text-[#88b4dc]
+                                before:content[''] before:absolute before:opacity-0 before:w-[0%] before:h-[2px] before:bg-[#1f2044] before:transition-all before:duration-300 before:left-0 before:top-0 hover:before:opacity-100 hover:before:w-[100%]
+                                after:content[''] after:absolute after:opacity-0 after:w-[0%] after:h-[2px] after:bg-[#1f2044] after:transition-all after:duration-300 after:right-0 after:bottom-0 hover:after:opacity-100 hover:after:w-[100%]"
                                 href={location}
-                                onClick={() => handleActiveLink(location)}
                             >
                                 {title}
                             </a>
@@ -119,8 +111,8 @@ function Header() {
                 <div
                     onClick={handleMenu}
                     className="text-[#ffffff]
-                                block
-                                lg:hidden
+                                flex
+                                flex-row-reverse
                                 relative"
                 >
                     <div
@@ -131,18 +123,23 @@ function Header() {
                                 p-2
                                 md:text-[30px]
                                 rounded-lg
-                                bg-[#423d3c] 
+                                bg-[#f79784] 
                                 focus:ring-2
-                                focus:ring-white"
+                                focus:ring-white
+                                lg:hidden"
                     >
-                        <ion-icon name="menu-outline"></ion-icon>
+                        {toggle ? (
+                            <ion-icon name="close-outline"></ion-icon>
+                        ) : (
+                            <ion-icon name="menu-outline"></ion-icon>
+                        )}
                     </div>
                     <ul
                         id="menu"
                         className="hidden
                                 overflow-hidden
-                                bg-[#150f0c]
-                                text-[#ffffff]
+                                bg-[#ffffff]
+                                text-[#1f2044]
                                 text-center
                                 font-medium
                                 absolute
@@ -153,24 +150,23 @@ function Header() {
                                 rounded-br-md
                                 rounded-bl-md
                                 animate-scaleUp
-                                origin-top"
+                                origin-top
+                                shadow-2xl"
                     >
                         {navList.map(([title, location], index) => (
-                            <li key={index} className="lg:rounded hover:text-[#976a13] hover:bg-[#facf5a] select-none">
+                            <li key={index} className="lg:rounded select-none">
                                 <a
-                                    className={
-                                        'block px-5 py-2.5 md:px-7 md:py-4' +
-                                        ' ' +
-                                        (activeLink === location ? 'text-[#976a13] bg-[#facf5a] lg:rounded' : '')
-                                    }
+                                    className="block px-5 py-2.5 md:px-7 md:py-4 hover:text-[#88b4dc] hover:text-2xl hover:duration-500"
                                     href={location}
-                                    onClick={() => handleActiveLink(location)}
                                 >
                                     {title}
                                 </a>
                             </li>
                         ))}
                     </ul>
+                    <div className="text-3xl text-[#1f2044] self-center px-2">
+                        <FontAwesomeIcon icon={faMoon} />
+                    </div>
                 </div>
             </div>
         </header>
