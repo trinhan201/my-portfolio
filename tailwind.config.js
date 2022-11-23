@@ -72,6 +72,7 @@ module.exports = {
                 slide: 'slide 6s steps(2) infinite',
                 translateY: 'translateY 1s linear infinite',
                 mouseScroll: 'mouseScroll alternate 1s ease infinite running',
+                'spin-slow': 'spin 3s linear infinite',
             },
         },
     },

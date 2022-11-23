@@ -60,7 +60,7 @@ function Header() {
                         md:w-[700px]
                         md:mx-6
                         lg:w-[1200px]
-                        m-w-[100%]
+                        max-w-[100%]
                         text-[#1f2044]"
             >
                 <a
@@ -164,7 +164,7 @@ function Header() {
                             </li>
                         ))}
                     </ul>
-                    <div className="text-3xl text-[#1f2044] self-center px-2">
+                    <div className="text-3xl text-[#1f2044] self-center px-2 cursor-pointer">
                         <FontAwesomeIcon icon={faMoon} />
                     </div>
                 </div>
