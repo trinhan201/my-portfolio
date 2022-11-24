@@ -84,7 +84,8 @@ function Header() {
                     className="hidden
                             lg:flex
                             text-lg
-                            font-medium"
+                            font-medium
+                            self-center"
                 >
                     {navList.map(([title, location], index) => (
                         <li

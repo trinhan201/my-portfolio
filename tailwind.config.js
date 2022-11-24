@@ -74,6 +74,9 @@ module.exports = {
                 mouseScroll: 'mouseScroll alternate 1s ease infinite running',
                 'spin-slow': 'spin 3s linear infinite',
             },
+            boxShadow: {
+                custom: '8px 12px 15px 3px rgba(0, 0, 0, 0.3)',
+            },
         },
     },
     plugins: [require('tailwindcss-animation-delay')],

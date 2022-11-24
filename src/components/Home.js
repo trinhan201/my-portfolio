@@ -1,5 +1,4 @@
-import bannerImg from '~/assets/banner.png';
-import { htmlIcon, cssIcon, jsIcon, reactIcon } from '~/assets/index';
+import { bannerImg, alarmIcon, triangleIcon, discIcon, boxIcon } from '~/assets/img/index';
 function Home() {
     return (
         <div
@@ -56,22 +55,22 @@ function Home() {
 
             <img
                 className="absolute top-[100px] left-[150px] md:left-[250px] lg:top-[100px] lg:left-[300px] w-10 animate-spin-slow"
-                src={htmlIcon}
+                src={triangleIcon}
                 alt=""
             />
             <img
                 className="hidden lg:block absolute top-[100px] lg:top-[100px] lg:right-[80px] w-10 animate-spin-slow"
-                src={cssIcon}
+                src={alarmIcon}
                 alt=""
             />
             <img
                 className="absolute bottom-[150px] left-[100px] md:left-[200px] lg:bottom-[100px] lg:left-[350px] w-10 animate-spin-slow"
-                src={jsIcon}
+                src={boxIcon}
                 alt=""
             />
             <img
                 className="hidden lg:block absolute bottom-[100px] lg:bottom-[100px] lg:right-[80px] w-10 animate-spin-slow"
-                src={reactIcon}
+                src={discIcon}
                 alt=""
             />
         </div>

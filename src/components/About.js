@@ -7,7 +7,7 @@ function About() {
             <div className="font-bold text-3xl">
                 <h1 className="inline relative">
                     About Me
-                    <span className="absolute w-14 left-0 bottom-[-8px] border-b-4 border-[#000]"></span>
+                    <span className="absolute w-14 left-0 bottom-[-8px] border-b-4 border-[#88b4dc]"></span>
                 </h1>
             </div>
             <div className="flex flex-col gap-y-[50px] xl:flex-row xl:justify-between xl:gap-x-[100px] py-[24px] mt-[32px]">
