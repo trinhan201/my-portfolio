@@ -10,4 +10,9 @@
     body {
         @apply h-full;
     }
+    h1,
+    p,
+    span {
+        @apply text-[#1f2044];
+    }
 }

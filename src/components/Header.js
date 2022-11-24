@@ -56,8 +56,8 @@ function Header() {
             <div
                 className="flex
                         justify-between
-                        w-[300px]
-                        md:w-[700px]
+                        w-[290px]
+                        md:w-[690px]
                         md:mx-6
                         lg:w-[1200px]
                         max-w-[100%]
@@ -66,9 +66,7 @@ function Header() {
                 <a
                     href="#home"
                     className="flex
-                            text-2xl
-                            md:text-[28px]
-                            lg:text-[36px]
+                            text-[36px]
                             font-bold
                             my-auto
                             select-none"
@@ -109,7 +107,6 @@ function Header() {
                     ))}
                 </ul>
                 <div
-                    onClick={handleMenu}
                     className="text-[#ffffff]
                                 flex
                                 flex-row-reverse
@@ -118,6 +115,7 @@ function Header() {
                     <div
                         tabIndex="1"
                         className="
+                                self-center
                                 text-[24px]
                                 leading-5
                                 p-2
@@ -127,6 +125,7 @@ function Header() {
                                 focus:ring-2
                                 focus:ring-white
                                 lg:hidden"
+                        onClick={handleMenu}
                     >
                         {toggle ? (
                             <ion-icon name="close-outline"></ion-icon>

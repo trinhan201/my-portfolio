@@ -3,11 +3,12 @@ import { htmlIcon, cssIcon, jsIcon, reactIcon } from '~/assets/index';
 function Home() {
     return (
         <div
+            id="home"
             className="bg-[#fcf1e7]
                             bg-center bg-no-repeat bg-contain h-screen flex flex-col items-center relative"
         >
             <div className="flex flex-col justify-center xl:flex-row xl:justify-between items-center h-screen xl:w-[1200px] mx-auto">
-                <div className="text-center xl:text-justify text-[#1f2044]">
+                <div className="text-center xl:text-justify">
                     <h2 className="py-3 text-lg md:text-xl lg:text-3xl">Hello !!!</h2>
                     <h1 className="py-3 text-3xl md:text-4xl lg:text-6xl font-black">I'm Trinh Phieu An</h1>
                     <ul className="font-bold text-lg md:text-xl lg:text-3xl h-[40px] leading-[40px] overflow-hidden">
@@ -53,10 +54,26 @@ function Home() {
                 </div>
             </a>
 
-            <img className="absolute top-[100px] left-[300px] w-12 animate-spin-slow" src={htmlIcon} alt="" />
-            <img className="absolute top-[100px] right-[80px] w-12 animate-spin-slow" src={cssIcon} alt="" />
-            <img className="absolute bottom-[100px] left-[350px] w-12 animate-spin-slow" src={jsIcon} alt="" />
-            <img className="absolute bottom-[100px] right-[80px] w-12 animate-spin-slow" src={reactIcon} alt="" />
+            <img
+                className="absolute top-[100px] left-[150px] md:left-[250px] lg:top-[100px] lg:left-[300px] w-10 animate-spin-slow"
+                src={htmlIcon}
+                alt=""
+            />
+            <img
+                className="hidden lg:block absolute top-[100px] lg:top-[100px] lg:right-[80px] w-10 animate-spin-slow"
+                src={cssIcon}
+                alt=""
+            />
+            <img
+                className="absolute bottom-[150px] left-[100px] md:left-[200px] lg:bottom-[100px] lg:left-[350px] w-10 animate-spin-slow"
+                src={jsIcon}
+                alt=""
+            />
+            <img
+                className="hidden lg:block absolute bottom-[100px] lg:bottom-[100px] lg:right-[80px] w-10 animate-spin-slow"
+                src={reactIcon}
+                alt=""
+            />
         </div>
     );
 }
