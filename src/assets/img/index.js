@@ -12,6 +12,9 @@ import discIcon from './disc.png';
 import boxIcon from './box.png';
 
 import bannerImg from './banner.png';
+import menuBg from './menu.png';
+
+import portfolio from './portfolio.jpg';
 
 export {
     htmlIcon,
@@ -26,4 +29,6 @@ export {
     triangleIcon,
     discIcon,
     boxIcon,
+    portfolio,
+    menuBg,
 };
