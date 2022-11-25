@@ -8,28 +8,38 @@ function Home() {
         >
             <div className="flex flex-col justify-center xl:flex-row xl:justify-between items-center h-screen xl:w-[1200px] mx-auto">
                 <div className="text-center xl:text-justify">
-                    <h2 className="py-3 text-lg md:text-xl lg:text-3xl">Hello !!!</h2>
-                    <h1 className="py-3 text-3xl md:text-4xl lg:text-6xl font-black">I'm Trinh Phieu An</h1>
-                    <ul className="font-bold text-lg md:text-xl lg:text-3xl h-[40px] leading-[40px] overflow-hidden">
-                        <li className="relative top-0 animate-slide">
-                            <span
-                                className="leading-[40px] py-1 relative after:content[''] after:border-l-2 after:border-solid
+                    <h1 className="py-3 text-lg md:text-xl lg:text-3xl">Hello !!!</h1>
+                    <h1 className="py-3 text-3xl md:text-4xl lg:text-6xl">
+                        I'm <span className="font-extrabold">Trinh Phieu An</span>
+                    </h1>
+                    <div className="flex justify-center text-left xl:justify-start mt-2">
+                        <h1 className="font-extrabold text-lg md:text-xl lg:text-3xl h-[40px]">a</h1>
+                        <ul className="text-lg md:text-xl lg:text-3xl h-[40px] leading-[40px] ml-2 overflow-hidden">
+                            <li className="relative top-[-6.5px] lg:top-[-1.5px] animate-slide">
+                                <span
+                                    className="leading-[40px] py-1 relative after:content[''] after:border-l-2 after:border-solid
                              after:border-[#1f2044] after:h-full after:w-full after:absolute after:left-0 after:animate-typing after:bg-[#fcf1e7]"
-                            >
-                                Developer
-                            </span>
-                        </li>
-                        <li className="mt-4 relative top-0 animate-slide">
-                            <span
-                                className="leading-[40px] py-1 relative after:content[''] after:border-l-2 after:border-solid after:border-[#1f2044] 
+                                >
+                                    Developer
+                                </span>
+                            </li>
+                            <li className="mt-3 relative top-[-7.5px] md:top-[-8px] lg:top-0 animate-slide">
+                                <span
+                                    className="leading-[40px] py-1 relative after:content[''] after:border-l-2 after:border-solid after:border-[#1f2044] 
                                 after:h-full after:w-full after:absolute after:left-0 after:animate-typing after:bg-[#fcf1e7]"
-                            >
-                                React JS
-                            </span>
-                        </li>
-                    </ul>
+                                >
+                                    React JS
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <img className="w-[300px] md:w-[400px] lg:w-[500px]" src={bannerImg} alt="" />
+            </div>
+            <div className="hidden xl:block absolute bottom-48 left-[76px]">
+                <button className="bg-[#f79784] rounded py-2 px-3 font-semibold opacity-90 hover:opacity-100">
+                    Let's Work Together
+                </button>
             </div>
             <a href="#about">
                 <div className="flex flex-col mb-6">

@@ -12,7 +12,8 @@
     }
     h1,
     p,
-    span {
+    span,
+    button {
         @apply text-[#1f2044];
     }
 }

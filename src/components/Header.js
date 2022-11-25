@@ -53,53 +53,22 @@ function Header() {
                 (scrolled ? 'bg-white shadow-xl animate-appear' : 'bg-transparent')
             }
         >
-            <div
-                className="flex
-                        justify-between
-                        w-[290px]
-                        md:w-[690px]
-                        md:mx-6
-                        lg:w-[1200px]
-                        max-w-[100%]
-                        text-[#1f2044]"
-            >
-                <a
-                    href="#home"
-                    className="flex
-                            text-[36px]
-                            font-bold
-                            my-auto
-                            select-none"
-                >
+            <div className="flex justify-between w-[290px] md:w-[690px] md:mx-6 lg:w-[1200px] max-w-[100%] text-[#1f2044]">
+                <a href="#home" className="flex text-[36px] font-bold my-auto select-none">
                     Pixels
-                    <span
-                        className="text-base
-                                    lg:text-xl
-                                    self-start"
-                    >
+                    <span className="text-base lg:text-xl self-start">
                         <ion-icon name="happy-outline"></ion-icon>
                     </span>
                 </a>
-                <ul
-                    className="hidden
-                            lg:flex
-                            text-lg
-                            font-medium
-                            self-center"
-                >
+                <ul className="hidden lg:flex text-lg font-medium self-center">
                     {navList.map(([title, location], index) => (
-                        <li
-                            key={index}
-                            className="relative
-                                    lg:rounded
-                                    mx-1
-                                    select-none
-                                    "
-                        >
+                        <li key={index} className="relative lg:rounded mx-1 select-none">
                             <a
                                 className="relative block px-3 py-1 hover:text-[#88b4dc]
-                                before:content[''] before:absolute before:opacity-0 before:w-[0%] before:h-[2px] before:bg-[#1f2044] before:transition-all before:duration-300 before:left-0 before:top-0 hover:before:opacity-100 hover:before:w-[100%]
-                                after:content[''] after:absolute after:opacity-0 after:w-[0%] after:h-[2px] after:bg-[#1f2044] after:transition-all after:duration-300 after:right-0 after:bottom-0 hover:after:opacity-100 hover:after:w-[100%]"
+                                        before:content[''] before:absolute before:opacity-0 before:w-[0%] before:h-[2px] before:bg-[#1f2044] 
+                                        before:transition-all before:duration-300 before:left-0 before:top-0 hover:before:opacity-100 hover:before:w-[100%]
+                                        after:content[''] after:absolute after:opacity-0 after:w-[0%] after:h-[2px] after:bg-[#1f2044] 
+                                        after:transition-all after:duration-300 after:right-0 after:bottom-0 hover:after:opacity-100 hover:after:w-[100%]"
                                 href={location}
                             >
                                 {title}
@@ -107,25 +76,10 @@ function Header() {
                         </li>
                     ))}
                 </ul>
-                <div
-                    className="text-[#ffffff]
-                                flex
-                                flex-row-reverse
-                                relative"
-                >
+                <div className="text-[#ffffff] flex flex-row-reverse relative">
                     <div
                         tabIndex="1"
-                        className="
-                                self-center
-                                text-[24px]
-                                leading-5
-                                p-2
-                                md:text-[30px]
-                                rounded-lg
-                                bg-[#f79784] 
-                                focus:ring-2
-                                focus:ring-white
-                                lg:hidden"
+                        className=" self-center text-[24px] leading-5 p-2 md:text-[30px] rounded-lg bg-[#f79784]  focus:ring-2 focus:ring-white lg:hidden"
                         onClick={handleMenu}
                     >
                         {toggle ? (
@@ -136,22 +90,8 @@ function Header() {
                     </div>
                     <ul
                         id="menu"
-                        className="hidden
-                                overflow-hidden
-                                bg-[#ffffff]
-                                text-[#1f2044]
-                                text-center
-                                font-medium
-                                absolute
-                                top-20
-                                right-0
-                                min-w-[300px]
-                                md:min-w-[700px]
-                                rounded-br-md
-                                rounded-bl-md
-                                animate-scaleUp
-                                origin-top
-                                shadow-2xl"
+                        className="hidden overflow-hidden bg-[#ffffff] text-[#1f2044] text-center font-medium absolute top-20 right-0 
+                                py-2 min-w-[300px] md:min-w-[700px] rounded-br-md rounded-bl-md animate-scaleUp origin-top shadow-2xl"
                     >
                         {navList.map(([title, location], index) => (
                             <li key={index} className="lg:rounded select-none">
@@ -163,9 +103,19 @@ function Header() {
                                 </a>
                             </li>
                         ))}
+                        <div className="block lg:hidden">
+                            <button className="bg-[#f79784] rounded py-2 px-7 md:px-56 font-semibold opacity-90 hover:opacity-100">
+                                Let's Work Together
+                            </button>
+                        </div>
                     </ul>
                     <div className="text-3xl text-[#1f2044] self-center px-2 cursor-pointer">
                         <FontAwesomeIcon icon={faMoon} />
+                    </div>
+                    <div className="hidden lg:block xl:hidden self-center">
+                        <button className="bg-[#f79784] rounded py-2 px-3 font-semibold opacity-90 hover:opacity-100">
+                            Let's Work Together
+                        </button>
                     </div>
                 </div>
             </div>
