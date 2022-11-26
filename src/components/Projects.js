@@ -15,10 +15,16 @@ function Projects() {
                     <div className="absolute top-[50%] translate-y-[-50%] bottom-0 opacity-0 w-full group-hover:opacity-100">
                         <h1 className="text-center font-bold text-2xl">My Portfolio</h1>
                         <div className="flex justify-center mt-5">
-                            <a href="#" className="rounded-md bg-slate-50 p-2 mx-1 opacity-90 hover:opacity-100">
+                            <a
+                                href="https://github.com/trinhan201/my-portfolio"
+                                className="rounded-md bg-slate-50 p-2 mx-1 opacity-90 hover:opacity-100"
+                            >
                                 Demo
                             </a>
-                            <a href="#" className="rounded-md bg-slate-50 p-2 mx-1 opacity-90 hover:opacity-100">
+                            <a
+                                href="https://github.com/trinhan201/my-portfolio"
+                                className="rounded-md bg-slate-50 p-2 mx-1 opacity-90 hover:opacity-100"
+                            >
                                 Source Code
                             </a>
                         </div>
@@ -29,10 +35,16 @@ function Projects() {
                     <div className="absolute top-[50%] translate-y-[-50%] bottom-0 opacity-0 w-full group-hover:opacity-100">
                         <h1 className="text-center font-bold text-2xl">My Portfolio</h1>
                         <div className="flex justify-center mt-5">
-                            <a href="#" className="rounded-md bg-slate-50 p-2 mx-1 opacity-90 hover:opacity-100">
+                            <a
+                                href="https://github.com/trinhan201/my-portfolio"
+                                className="rounded-md bg-slate-50 p-2 mx-1 opacity-90 hover:opacity-100"
+                            >
                                 Demo
                             </a>
-                            <a href="#" className="rounded-md bg-slate-50 p-2 mx-1 opacity-90 hover:opacity-100">
+                            <a
+                                href="https://github.com/trinhan201/my-portfolio"
+                                className="rounded-md bg-slate-50 p-2 mx-1 opacity-90 hover:opacity-100"
+                            >
                                 Source Code
                             </a>
                         </div>

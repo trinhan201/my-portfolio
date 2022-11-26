@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { ContactModal } from '~/components/';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon } from '@fortawesome/free-regular-svg-icons';
 
@@ -13,6 +14,7 @@ const navList = [
 function Header() {
     const [toggle, setToggle] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [modalOpen, setModalOpen] = useState(false);
 
     useEffect(() => {
         const scrollPage = () => {
@@ -48,7 +50,7 @@ function Header() {
     return (
         <header
             className={
-                'h-20 flex items-center justify-center fixed top-0 right-0 left-0 z-50' +
+                'h-20 flex items-center justify-center fixed top-0 right-0 left-0 z-30' +
                 ' ' +
                 (scrolled ? 'bg-white shadow-xl animate-appear' : 'bg-transparent')
             }
@@ -104,7 +106,12 @@ function Header() {
                             </li>
                         ))}
                         <div className="block lg:hidden">
-                            <button className="bg-[#f79784] rounded py-2 px-7 md:px-56 font-semibold opacity-90 hover:opacity-100">
+                            <button
+                                className="bg-[#f79784] rounded py-2 px-7 md:px-56 font-semibold opacity-90 hover:opacity-100"
+                                onClick={() => {
+                                    setModalOpen(true);
+                                }}
+                            >
                                 Let's Work Together
                             </button>
                         </div>
@@ -113,12 +120,18 @@ function Header() {
                         <FontAwesomeIcon icon={faMoon} />
                     </div>
                     <div className="hidden lg:block xl:hidden self-center">
-                        <button className="bg-[#f79784] rounded py-2 px-3 font-semibold opacity-90 hover:opacity-100">
+                        <button
+                            className="bg-[#f79784] rounded py-2 px-3 font-semibold opacity-90 hover:opacity-100"
+                            onClick={() => {
+                                setModalOpen(true);
+                            }}
+                        >
                             Let's Work Together
                         </button>
                     </div>
                 </div>
             </div>
+            {modalOpen && <ContactModal setOpenModal={setModalOpen} />}
         </header>
     );
 }

@@ -1,5 +1,9 @@
+import { useState } from 'react';
+import { ContactModal } from '~/components/';
 import { bannerImg, alarmIcon, triangleIcon, discIcon, boxIcon } from '~/assets/img/index';
 function Home() {
+    const [modalOpen, setModalOpen] = useState(false);
+
     return (
         <div
             id="home"
@@ -37,7 +41,12 @@ function Home() {
                 <img className="w-[300px] md:w-[400px] lg:w-[500px]" src={bannerImg} alt="" />
             </div>
             <div className="hidden xl:block absolute bottom-48 left-[76px]">
-                <button className="bg-[#f79784] rounded py-2 px-3 font-semibold opacity-90 hover:opacity-100">
+                <button
+                    className="bg-[#f79784] rounded py-2 px-3 font-semibold opacity-90 hover:opacity-100"
+                    onClick={() => {
+                        setModalOpen(true);
+                    }}
+                >
                     Let's Work Together
                 </button>
             </div>
@@ -83,6 +92,7 @@ function Home() {
                 src={discIcon}
                 alt=""
             />
+            {modalOpen && <ContactModal setOpenModal={setModalOpen} />}
         </div>
     );
 }

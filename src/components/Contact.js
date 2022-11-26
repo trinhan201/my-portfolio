@@ -99,11 +99,9 @@ function Contact() {
                             placeholder="Message"
                             required
                         ></textarea>
-                        <input
-                            className="bg-[#f79784] text-[#1f2044] rounded py-2 px-5 font-semibold opacity-90 hover:opacity-100 mt-2 cursor-pointer"
-                            type="submit"
-                            value="Send"
-                        />
+                        <button className="bg-[#f79784] text-[#1f2044] rounded py-2 px-5 font-semibold opacity-90 hover:opacity-100 mt-2 cursor-pointer">
+                            Send
+                        </button>
                     </form>
                 </div>
             </div>
