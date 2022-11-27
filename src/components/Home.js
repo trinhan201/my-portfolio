@@ -8,29 +8,29 @@ function Home() {
         <div
             id="home"
             className="bg-[#f1f5f8]
-                            bg-center bg-no-repeat bg-contain h-screen flex flex-col items-center relative"
+                            bg-center bg-no-repeat bg-contain h-screen flex flex-col items-center relative dark:bg-[#131917]"
         >
             <div className="flex flex-col justify-center xl:flex-row xl:justify-between items-center h-screen xl:w-[1200px] mx-auto">
                 <div className="text-center xl:text-justify">
-                    <h1 className="py-3 text-lg md:text-xl lg:text-3xl">Hello !!!</h1>
-                    <h1 className="py-3 text-3xl md:text-4xl lg:text-6xl">
-                        I'm <span className="font-extrabold">Trinh Phieu An</span>
+                    <h1 className="py-3 text-lg md:text-xl lg:text-3xl dark:text-white">Hello !!!</h1>
+                    <h1 className="py-3 text-3xl md:text-4xl lg:text-6xl dark:text-white">
+                        I'm <span className="font-extrabold dark:text-white">Trinh Phieu An</span>
                     </h1>
                     <div className="flex justify-center text-left xl:justify-start mt-2">
-                        <h1 className="font-extrabold text-lg md:text-xl lg:text-3xl h-[40px]">a</h1>
+                        <h1 className="font-extrabold text-lg md:text-xl lg:text-3xl h-[40px] dark:text-white">a</h1>
                         <ul className="text-lg md:text-xl lg:text-3xl h-[40px] leading-[40px] ml-2 overflow-hidden">
                             <li className="relative top-[-6.5px] lg:top-[-1.5px] animate-slide">
                                 <span
                                     className="leading-[40px] py-1 relative after:content[''] after:border-l-2 after:border-solid
-                             after:border-[#1f2044] after:h-full after:w-full after:absolute after:left-0 after:animate-typing after:bg-[#f1f5f8]"
+                             after:border-[#1f2044] dark:after:border-white after:h-full after:w-full after:absolute after:left-0 after:animate-typing after:bg-[#f1f5f8] dark:text-white dark:after:bg-[#131917]"
                                 >
                                     Developer
                                 </span>
                             </li>
                             <li className="mt-3 relative top-[-7.5px] md:top-[-8px] lg:top-0 animate-slide">
                                 <span
-                                    className="leading-[40px] py-1 relative after:content[''] after:border-l-2 after:border-solid after:border-[#1f2044] 
-                                after:h-full after:w-full after:absolute after:left-0 after:animate-typing after:bg-[#f1f5f8]"
+                                    className="leading-[40px] py-1 relative after:content[''] after:border-l-2 after:border-solid after:border-[#1f2044] dark:after:border-white 
+                                after:h-full after:w-full after:absolute after:left-0 after:animate-typing after:bg-[#f1f5f8] dark:text-white dark:after:bg-[#131917]"
                                 >
                                     React JS
                                 </span>

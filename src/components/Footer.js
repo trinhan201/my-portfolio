@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Footer() {
     return (
-        <div className="flex flex-col items-center bg-black px-10 py-14 opacity-90">
+        <div className="flex flex-col items-center bg-black px-10 py-14 opacity-90 dark:bg-[#19211e]">
             <ul className="flex pb-8">
                 <li className="flex mx-1 text-white w-9 h-9 border border-white rounded-[50%] hover:border-[#88b4dc] hover:text-[#88b4dc]">
                     <a className="m-auto px-2 py-1" href="https://www.facebook.com/martinbilly.spears">

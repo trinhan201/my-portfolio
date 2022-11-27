@@ -2,9 +2,9 @@ import { portfolio, menuBg } from '~/assets/img/index';
 
 function Projects() {
     return (
-        <div id="projects" className="px-[36px] py-[72px] xl:p-[72px]">
+        <div id="projects" className="px-[36px] py-[72px] xl:p-[72px] dark:bg-[#19211e]">
             <div className="font-bold text-3xl">
-                <h1 className="inline relative">
+                <h1 className="inline relative dark:text-white">
                     My Projects
                     <span className="absolute w-14 left-0 bottom-[-8px] border-b-4 border-[#88b4dc]"></span>
                 </h1>

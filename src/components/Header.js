@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ContactModal } from '~/components/';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon } from '@fortawesome/free-regular-svg-icons';
+import { faMoon, faSun } from '@fortawesome/free-regular-svg-icons';
 
 const navList = [
     ['Home', '#home'],
@@ -13,6 +13,7 @@ const navList = [
 
 function Header() {
     const [toggle, setToggle] = useState(false);
+    const [darkMode, setDarkMode] = useState(localStorage.getItem('theme') === 'dark' ? true : false);
     const [scrolled, setScrolled] = useState(false);
     const [modalOpen, setModalOpen] = useState(false);
 
@@ -47,18 +48,34 @@ function Header() {
         }
     };
 
+    useEffect(() => {
+        document.documentElement.setAttribute('class', localStorage.getItem('theme'));
+    }, []);
+
+    const handleDarkMode = () => {
+        if (darkMode === false) {
+            localStorage.setItem('theme', 'dark');
+            document.documentElement.setAttribute('class', localStorage.getItem('theme'));
+            setDarkMode(true);
+        } else {
+            localStorage.setItem('theme', 'light');
+            document.documentElement.setAttribute('class', localStorage.getItem('theme'));
+            setDarkMode(false);
+        }
+    };
+
     return (
         <header
             className={
                 'h-20 flex items-center justify-center fixed top-0 right-0 left-0 z-30' +
                 ' ' +
-                (scrolled ? 'bg-white shadow-xl animate-appear' : 'bg-transparent')
+                (scrolled ? 'bg-white shadow-xl animate-appear dark:bg-[#131917]' : 'bg-transparent')
             }
         >
             <div className="flex justify-between w-full px-[36px] xl:w-[1208px] xl:px-0 max-w-[100%] text-[#1f2044]">
-                <a href="#home" className="flex text-[36px] font-bold my-auto select-none">
+                <a href="#home" className="flex text-[36px] font-bold my-auto select-none dark:text-white">
                     Pixels
-                    <span className="text-base lg:text-xl self-start">
+                    <span className="text-base lg:text-xl self-start dark:text-white">
                         <ion-icon name="happy-outline"></ion-icon>
                     </span>
                 </a>
@@ -67,10 +84,11 @@ function Header() {
                         <li key={index} className="relative lg:rounded mx-1 select-none">
                             <a
                                 className="relative block px-3 py-1 hover:text-[#88b4dc]
-                                        before:content[''] before:absolute before:opacity-0 before:w-[0%] before:h-[2px] before:bg-[#1f2044] 
+                                        before:content[''] before:absolute before:opacity-0 before:w-[0%] before:h-[2px] before:bg-[#1f2044] dark:before:bg-white
                                         before:transition-all before:duration-300 before:left-0 before:top-0 hover:before:opacity-100 hover:before:w-[100%]
-                                        after:content[''] after:absolute after:opacity-0 after:w-[0%] after:h-[2px] after:bg-[#1f2044] 
-                                        after:transition-all after:duration-300 after:right-0 after:bottom-0 hover:after:opacity-100 hover:after:w-[100%]"
+                                        after:content[''] after:absolute after:opacity-0 after:w-[0%] after:h-[2px] after:bg-[#1f2044] dark:after:bg-white
+                                        after:transition-all after:duration-300 after:right-0 after:bottom-0 hover:after:opacity-100 hover:after:w-[100%]
+                                        dark:text-white"
                                 href={location}
                             >
                                 {title}
@@ -93,12 +111,12 @@ function Header() {
                     <ul
                         id="menu"
                         className="hidden overflow-hidden bg-[#ffffff] text-[#1f2044] text-center font-medium absolute top-20 right-0 
-                                py-2 min-w-[300px] md:min-w-[700px] rounded-br-md rounded-bl-md animate-scaleUp origin-top shadow-2xl"
+                                py-2 min-w-[300px] md:min-w-[700px] rounded-br-md rounded-bl-md animate-scaleUp origin-top shadow-2xl dark:bg-[#19211e]"
                     >
                         {navList.map(([title, location], index) => (
                             <li key={index} className="lg:rounded select-none">
                                 <a
-                                    className="block px-5 py-2.5 md:px-7 md:py-4 hover:text-[#88b4dc] hover:text-2xl hover:duration-500"
+                                    className="block px-5 py-2.5 md:px-7 md:py-4 hover:text-[#88b4dc] hover:text-2xl hover:duration-500 dark:text-white"
                                     href={location}
                                 >
                                     {title}
@@ -116,8 +134,11 @@ function Header() {
                             </button>
                         </div>
                     </ul>
-                    <div className="text-3xl text-[#1f2044] self-center px-2 cursor-pointer">
-                        <FontAwesomeIcon icon={faMoon} />
+                    <div
+                        className="text-3xl text-[#1f2044] self-center px-2 cursor-pointer dark:text-white"
+                        onClick={handleDarkMode}
+                    >
+                        {darkMode ? <FontAwesomeIcon icon={faSun} /> : <FontAwesomeIcon icon={faMoon} />}
                     </div>
                     <div className="hidden lg:block xl:hidden self-center">
                         <button
