@@ -108,32 +108,7 @@ function Header() {
                             <ion-icon name="menu-outline"></ion-icon>
                         )}
                     </div>
-                    <ul
-                        id="menu"
-                        className="hidden overflow-hidden bg-[#ffffff] text-[#1f2044] text-center font-medium absolute top-20 right-0 
-                                py-2 min-w-[300px] md:min-w-[700px] rounded-br-md rounded-bl-md animate-scaleUp origin-top shadow-2xl dark:bg-[#19211e]"
-                    >
-                        {navList.map(([title, location], index) => (
-                            <li key={index} className="lg:rounded select-none">
-                                <a
-                                    className="block px-5 py-2.5 md:px-7 md:py-4 hover:text-[#88b4dc] hover:text-2xl hover:duration-500 dark:text-white"
-                                    href={location}
-                                >
-                                    {title}
-                                </a>
-                            </li>
-                        ))}
-                        <div className="block lg:hidden">
-                            <button
-                                className="rounded py-2 px-7 md:px-56 font-semibold opacity-90 hover:opacity-100"
-                                onClick={() => {
-                                    setModalOpen(true);
-                                }}
-                            >
-                                Let's Work Together
-                            </button>
-                        </div>
-                    </ul>
+
                     <div
                         className="text-3xl text-[#1f2044] self-center px-2 cursor-pointer dark:text-white"
                         onClick={handleDarkMode}
@@ -152,6 +127,32 @@ function Header() {
                     </div>
                 </div>
             </div>
+            <ul
+                id="menu"
+                className="hidden overflow-hidden bg-[#ffffff] text-[#1f2044] text-center font-medium absolute top-[90px] 
+                                py-2 w-[80%] md:w-[90%] rounded-br-md rounded-bl-md animate-scaleUp origin-top shadow-2xl dark:bg-[#19211e]"
+            >
+                {navList.map(([title, location], index) => (
+                    <li key={index} className="lg:rounded select-none">
+                        <a
+                            className="block px-5 py-2.5 md:px-7 md:py-4 hover:text-[#88b4dc] hover:text-2xl hover:duration-500 dark:text-white"
+                            href={location}
+                        >
+                            {title}
+                        </a>
+                    </li>
+                ))}
+                <div className="block lg:hidden">
+                    <button
+                        className="rounded py-2 px-7 md:px-56 font-semibold opacity-90 hover:opacity-100"
+                        onClick={() => {
+                            setModalOpen(true);
+                        }}
+                    >
+                        Let's Work Together
+                    </button>
+                </div>
+            </ul>
             {modalOpen && <ContactModal setOpenModal={setModalOpen} />}
         </header>
     );
