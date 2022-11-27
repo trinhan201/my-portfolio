@@ -2,7 +2,7 @@ import { faEnvelope, faHouseUser, faLocationDot, faMobile } from '@fortawesome/f
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function Contact() {
     return (
-        <div id="contact" className="px-[36px] py-[72px] xl:p-[72px] bg-[#fcf1e7]">
+        <div id="contact" className="px-[36px] py-[72px] xl:p-[72px] bg-[#f1f5f8]">
             <div className="font-bold text-3xl">
                 <h1 className="inline relative">
                     Contact
@@ -99,7 +99,7 @@ function Contact() {
                             placeholder="Message"
                             required
                         ></textarea>
-                        <button className="bg-[#f79784] text-[#1f2044] rounded py-2 px-5 font-semibold opacity-90 hover:opacity-100 mt-2 cursor-pointer">
+                        <button className="rounded py-2 px-5 font-semibold opacity-90 hover:opacity-100 mt-2 cursor-pointer">
                             Send
                         </button>
                     </form>

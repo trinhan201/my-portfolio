@@ -13,8 +13,10 @@
     h1,
     p,
     li,
-    span,
-    button {
+    span {
         @apply text-[#1f2044];
+    }
+    button {
+        @apply text-white bg-[#88b4dc];
     }
 }

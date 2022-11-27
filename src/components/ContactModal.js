@@ -60,15 +60,13 @@ function ContactModal({ setOpenModal }) {
                             required
                         ></textarea>
                         <button
-                            type="button"
-                            className="bg-[#f79784] text-[#1f2044] rounded py-2 px-5 font-semibold opacity-90
+                            className="rounded py-2 px-5 font-semibold opacity-90
                                 hover:opacity-100 mt-2 cursor-pointer"
                         >
                             Send
                         </button>
                         <button
-                            type="button"
-                            className="bg-[#ffffff] text-[#1f2044] rounded py-2 px-5 font-semibold opacity-90
+                            className="bg-[#ffffff] text-[#88b4dc] rounded py-2 px-5 font-semibold opacity-90
                                 hover:opacity-100 hover:underline mt-2 ml-2 cursor-pointer"
                             onClick={() => {
                                 setOpenModal(false);

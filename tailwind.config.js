@@ -87,7 +87,7 @@ module.exports = {
                 modalFadeIn: 'modalFadeIn 0.5s ease',
             },
             boxShadow: {
-                custom: '0 0 15px 7px rgba(0, 0, 0, 0.2)',
+                custom: '0 10px 15px 6px rgba(0, 0, 0, 0.2)',
             },
         },
     },

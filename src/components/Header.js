@@ -55,7 +55,7 @@ function Header() {
                 (scrolled ? 'bg-white shadow-xl animate-appear' : 'bg-transparent')
             }
         >
-            <div className="flex justify-between w-[290px] md:w-[690px] md:mx-6 lg:w-[1200px] max-w-[100%] text-[#1f2044]">
+            <div className="flex justify-between w-full px-[36px] xl:w-[1208px] xl:px-0 max-w-[100%] text-[#1f2044]">
                 <a href="#home" className="flex text-[36px] font-bold my-auto select-none">
                     Pixels
                     <span className="text-base lg:text-xl self-start">
@@ -81,7 +81,7 @@ function Header() {
                 <div className="text-[#ffffff] flex flex-row-reverse relative">
                     <div
                         tabIndex="1"
-                        className=" self-center text-[24px] leading-5 p-2 md:text-[30px] rounded-lg bg-[#f79784]  focus:ring-2 focus:ring-white lg:hidden"
+                        className=" self-center text-[24px] leading-5 p-2 md:text-[30px] rounded-lg bg-[#88b4dc]  focus:ring-2 focus:ring-white lg:hidden"
                         onClick={handleMenu}
                     >
                         {toggle ? (
@@ -107,7 +107,7 @@ function Header() {
                         ))}
                         <div className="block lg:hidden">
                             <button
-                                className="bg-[#f79784] rounded py-2 px-7 md:px-56 font-semibold opacity-90 hover:opacity-100"
+                                className="rounded py-2 px-7 md:px-56 font-semibold opacity-90 hover:opacity-100"
                                 onClick={() => {
                                     setModalOpen(true);
                                 }}
@@ -121,7 +121,7 @@ function Header() {
                     </div>
                     <div className="hidden lg:block xl:hidden self-center">
                         <button
-                            className="bg-[#f79784] rounded py-2 px-3 font-semibold opacity-90 hover:opacity-100"
+                            className="rounded py-2 px-3 font-semibold opacity-90 hover:opacity-100"
                             onClick={() => {
                                 setModalOpen(true);
                             }}

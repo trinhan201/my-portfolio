@@ -7,7 +7,7 @@ function Home() {
     return (
         <div
             id="home"
-            className="bg-[#fcf1e7]
+            className="bg-[#f1f5f8]
                             bg-center bg-no-repeat bg-contain h-screen flex flex-col items-center relative"
         >
             <div className="flex flex-col justify-center xl:flex-row xl:justify-between items-center h-screen xl:w-[1200px] mx-auto">
@@ -22,7 +22,7 @@ function Home() {
                             <li className="relative top-[-6.5px] lg:top-[-1.5px] animate-slide">
                                 <span
                                     className="leading-[40px] py-1 relative after:content[''] after:border-l-2 after:border-solid
-                             after:border-[#1f2044] after:h-full after:w-full after:absolute after:left-0 after:animate-typing after:bg-[#fcf1e7]"
+                             after:border-[#1f2044] after:h-full after:w-full after:absolute after:left-0 after:animate-typing after:bg-[#f1f5f8]"
                                 >
                                     Developer
                                 </span>
@@ -30,7 +30,7 @@ function Home() {
                             <li className="mt-3 relative top-[-7.5px] md:top-[-8px] lg:top-0 animate-slide">
                                 <span
                                     className="leading-[40px] py-1 relative after:content[''] after:border-l-2 after:border-solid after:border-[#1f2044] 
-                                after:h-full after:w-full after:absolute after:left-0 after:animate-typing after:bg-[#fcf1e7]"
+                                after:h-full after:w-full after:absolute after:left-0 after:animate-typing after:bg-[#f1f5f8]"
                                 >
                                     React JS
                                 </span>
@@ -42,7 +42,7 @@ function Home() {
             </div>
             <div className="hidden xl:block absolute bottom-48 left-[76px]">
                 <button
-                    className="bg-[#f79784] rounded py-2 px-3 font-semibold opacity-90 hover:opacity-100"
+                    className="rounded py-2 px-3 font-semibold opacity-90 hover:opacity-100"
                     onClick={() => {
                         setModalOpen(true);
                     }}
