@@ -64,7 +64,7 @@ module.exports = {
                         opacity: 1,
                     },
                 },
-                modalFadeIn: {
+                fadeIn: {
                     '0%': {
                         opacity: 0,
                         transform: 'translateY(-140px)',
@@ -85,7 +85,7 @@ module.exports = {
                 translateY: 'translateY 1s linear infinite',
                 mouseScroll: 'mouseScroll alternate 1s ease infinite running',
                 'spin-slow': 'spin 3s linear infinite',
-                modalFadeIn: 'modalFadeIn 0.5s ease',
+                fadeIn: 'fadeIn 0.5s ease',
             },
             boxShadow: {
                 custom: '0 10px 15px 6px rgba(0, 0, 0, 0.2)',

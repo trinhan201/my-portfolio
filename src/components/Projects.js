@@ -17,12 +17,16 @@ function Projects() {
                         <div className="flex justify-center mt-5">
                             <a
                                 href="https://github.com/trinhan201/my-portfolio"
+                                target="_blank"
+                                rel="noreferrer noopener"
                                 className="rounded-md bg-slate-50 p-2 mx-1 opacity-90 hover:opacity-100"
                             >
                                 Demo
                             </a>
                             <a
                                 href="https://github.com/trinhan201/my-portfolio"
+                                target="_blank"
+                                rel="noreferrer noopener"
                                 className="rounded-md bg-slate-50 p-2 mx-1 opacity-90 hover:opacity-100"
                             >
                                 Source Code
@@ -37,12 +41,16 @@ function Projects() {
                         <div className="flex justify-center mt-5">
                             <a
                                 href="https://github.com/trinhan201/my-portfolio"
+                                target="_blank"
+                                rel="noreferrer noopener"
                                 className="rounded-md bg-slate-50 p-2 mx-1 opacity-90 hover:opacity-100"
                             >
                                 Demo
                             </a>
                             <a
                                 href="https://github.com/trinhan201/my-portfolio"
+                                target="_blank"
+                                rel="noreferrer noopener"
                                 className="rounded-md bg-slate-50 p-2 mx-1 opacity-90 hover:opacity-100"
                             >
                                 Source Code
@@ -57,6 +65,8 @@ function Projects() {
                         <div className="flex justify-center mt-5">
                             <a
                                 href="https://github.com/trinhan201?tab=repositories"
+                                target="_blank"
+                                rel="noreferrer noopener"
                                 className="rounded-md bg-slate-50 p-2 mx-1 opacity-90 hover:opacity-100"
                             >
                                 Go Now!!!

@@ -35,16 +35,10 @@ function Header() {
         const menu = document.getElementById('menu');
         if (toggle) {
             setToggle(false);
-            var delay;
-            window.clearTimeout(delay);
-            delay = setTimeout(() => {
-                menu.classList.replace('block', 'hidden');
-            }, 1000);
-            menu.classList.replace('animate-scaleDown', 'animate-scaleUp');
+            menu.classList.replace('block', 'hidden');
         } else {
             setToggle(true);
             menu.classList.replace('hidden', 'block');
-            menu.classList.replace('animate-scaleUp', 'animate-scaleDown');
         }
     };
 
@@ -130,13 +124,14 @@ function Header() {
             <ul
                 id="menu"
                 className="hidden overflow-hidden bg-[#ffffff] text-[#1f2044] text-center font-medium absolute top-[90px] 
-                                py-2 w-[80%] md:w-[90%] rounded-br-md rounded-bl-md animate-scaleUp origin-top shadow-2xl dark:bg-[#19211e]"
+                        py-2 w-[80%] md:w-[90%] rounded-br-md rounded-bl-md animate-scaleDown origin-top shadow-2xl dark:bg-[#19211e]"
             >
                 {navList.map(([title, location], index) => (
                     <li key={index} className="lg:rounded select-none">
                         <a
                             className="block px-5 py-2.5 md:px-7 md:py-4 hover:text-[#88b4dc] hover:text-2xl hover:duration-500 dark:text-white"
                             href={location}
+                            onClick={() => handleMenu(toggle === false)}
                         >
                             {title}
                         </a>
