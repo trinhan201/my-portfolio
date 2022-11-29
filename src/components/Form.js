@@ -8,12 +8,29 @@ function Form({ children }) {
         message: '',
     });
 
+    function encode(data) {
+        return Object.keys(data)
+            .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+            .join('&');
+    }
+
     const handleSubmit = (e) => {
+        const fullName = inputValue.fullName;
+        const email = inputValue.email;
+        const subject = inputValue.subject;
+        const message = inputValue.message;
+
         e.preventDefault();
-        console.log(inputValue);
+        fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: encode({ 'form-name': 'contact', fullName, email, message, subject }),
+        })
+            .then(() => console.log('Form successfully submitted'))
+            .catch((error) => alert(error));
     };
     return (
-        <form name="contact" method="post" onSubmit={handleSubmit}>
+        <form data-netlify="true" name="contact" method="post" onSubmit={handleSubmit}>
             <div className="flex">
                 <div className="flex-1 mt-4 mr-[8px]">
                     <input
