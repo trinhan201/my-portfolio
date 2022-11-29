@@ -15,22 +15,23 @@ function Form({ children }) {
     }
 
     const handleSubmit = (e) => {
+        e.preventDefault();
         const fullName = inputValue.fullName;
         const email = inputValue.email;
         const subject = inputValue.subject;
         const message = inputValue.message;
 
-        e.preventDefault();
         fetch('/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: encode({ 'form-name': 'contact', fullName, email, message, subject }),
         })
-            .then(() => console.log('Form successfully submitted'))
+            .then(() => alert('Form successfully submitted'))
             .catch((error) => alert(error));
     };
     return (
         <form data-netlify="true" name="contact" method="post" onSubmit={handleSubmit}>
+            <input type="hidden" name="form-name" value="contact" />
             <div className="flex">
                 <div className="flex-1 mt-4 mr-[8px]">
                     <input
