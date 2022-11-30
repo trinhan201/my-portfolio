@@ -20,6 +20,12 @@ function Form({ children }) {
         const email = inputValue.email;
         const subject = inputValue.subject;
         const message = inputValue.message;
+        setInputValue({
+            fullName: '',
+            email: '',
+            subject: '',
+            message: '',
+        });
 
         fetch('/', {
             method: 'POST',

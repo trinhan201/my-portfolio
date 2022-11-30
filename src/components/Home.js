@@ -17,8 +17,7 @@ function Home() {
                         I'm <span className="font-extrabold dark:text-white">Trinh Phieu An</span>
                     </h1>
                     <div className="flex justify-center text-left xl:justify-start mt-2">
-                        <h1 className="font-extrabold text-lg md:text-xl lg:text-3xl h-[40px] dark:text-white">a</h1>
-                        <ul className="text-lg md:text-xl lg:text-3xl h-[40px] leading-[40px] ml-2 overflow-hidden">
+                        <ul className="text-lg md:text-xl lg:text-3xl h-[40px] leading-[40px] font-bold overflow-hidden">
                             <li className="relative top-[-6.5px] lg:top-[-1.5px] animate-slide">
                                 <span
                                     className="leading-[40px] py-1 relative after:content[''] after:border-l-2 after:border-solid
@@ -38,7 +37,7 @@ function Home() {
                         </ul>
                     </div>
                 </div>
-                <img className="w-[300px] md:w-[400px] lg:w-[500px]" src={bannerImg} alt="" />
+                <img className="w-[300px] md:w-[400px] lg:w-[500px]" src={bannerImg} alt="Banner" />
             </div>
             <div className="hidden xl:block absolute bottom-48 left-[76px]">
                 <button
@@ -75,22 +74,22 @@ function Home() {
             <img
                 className="absolute top-[100px] left-[150px] md:left-[250px] lg:top-[100px] lg:left-[300px] w-10 animate-spin-slow"
                 src={triangleIcon}
-                alt=""
+                alt="Triangle"
             />
             <img
                 className="hidden lg:block absolute top-[100px] lg:top-[100px] lg:right-[80px] w-10 animate-spin-slow"
                 src={alarmIcon}
-                alt=""
+                alt="Clock"
             />
             <img
                 className="absolute bottom-[150px] left-[100px] md:left-[200px] lg:bottom-[100px] lg:left-[350px] w-10 animate-spin-slow"
                 src={boxIcon}
-                alt=""
+                alt="Box"
             />
             <img
                 className="hidden lg:block absolute bottom-[100px] lg:bottom-[100px] lg:right-[80px] w-10 animate-spin-slow"
                 src={discIcon}
-                alt=""
+                alt="Disc"
             />
             {modalOpen && <ContactModal setOpenModal={setModalOpen} />}
         </div>
