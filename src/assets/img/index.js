@@ -15,6 +15,7 @@ import bannerImg from './banner.png';
 import menuBg from './menu.png';
 
 import portfolio from './portfolio.jpg';
+import anonymousShop from './anonymousshop.jpg';
 
 export {
     htmlIcon,
@@ -30,5 +31,6 @@ export {
     discIcon,
     boxIcon,
     portfolio,
+    anonymousShop,
     menuBg,
 };

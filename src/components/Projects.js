@@ -1,4 +1,4 @@
-import { portfolio, menuBg } from '~/assets/img/index';
+import { portfolio, anonymousShop, menuBg } from '~/assets/img/index';
 
 function Projects() {
     const dataProjects = [
@@ -11,10 +11,10 @@ function Projects() {
         },
         {
             id: 2,
-            projectName: 'E-Commerce',
-            imgSrc: portfolio,
-            projectSrc: 'https://github.com/trinhan201/my-portfolio',
-            demoLink: 'https://anphieuportfolio.netlify.app/',
+            projectName: 'Anonymous Shop',
+            imgSrc: anonymousShop,
+            projectSrc: 'https://github.com/trinhan201/e-commerce',
+            demoLink: 'https://anonymousshop.netlify.app/',
         },
     ];
     return (
