@@ -17,7 +17,7 @@ function App() {
     return (
         <div className="App">
             {loading ? (
-                <div className="flex items-center justify-center w-full h-screen">
+                <div className="flex items-center justify-center w-full h-screen bg-[#f1f5f8]">
                     <PacmanLoader color={'#ffdf00'} loading={loading} size={30} />
                 </div>
             ) : (
